@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://www.unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://www.unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://www.unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+</head>
+<body>
+    <div id="js-root"></div>
+    <div id="react-root"></div>
+    <!--Plain Vanilla JS-->
+    <script>
+        const root = document.querySelector("#js-root");
+        root.insertAdjacentHTML("beforeend", `
+            <div>
+                <h1>Jiten Javascript</h1>
+            </div>
+        `);
+        
+    </script>
+
+    <!--- ~! Let babel process this(this is not NOT vanilla JS script)-->
+    <script type="text/babel">
+        const reactRoot = ReactDOM.createRoot(document.querySelector("#react-root"));
+        const div = <div>
+                <h1>Jiten React</h1>
+            </div>;
+        reactRoot.render(div);
+    </script>
+</body>
+</html>
